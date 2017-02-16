@@ -147,5 +147,24 @@ class WeekdayFinderTest extends PHPUnit_Framework_TestCase
         //Assert
         $this->assertEquals(1044, $result);
     }
+
+    // Dates with leap days (February 29) between them
+    function test_daysBetween_leapDays()
+    {
+        //Arrange
+        $test_WeekdayFinder = new WeekdayFinder;
+        $year_1 = 2012;
+        $month_1 = 2;
+        $day_1 = 17;
+        $year_2 = 2017;
+        $month_2 = 1;
+        $day_2 = 25;
+
+        //Act
+        $result = $test_WeekdayFinder->daysBetween($year_1, $month_1, $day_1, $year_2, $month_2, $day_2);
+
+        //Assert
+        $this->assertEquals(1804, $result);
+    }
 }
 ?>

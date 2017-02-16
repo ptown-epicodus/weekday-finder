@@ -20,8 +20,8 @@ class WeekdayFinder
     {
         $days = 0;
 
-        $whole_years_between = $year_2 - $year_1;
-        $days += 365 * $whole_years_between;
+        for ($i = $year_1; $i < $year_2; $i++)
+          $days += ($this->checkLeapYear($i) ? 366 : 365);
         $days += $this->dayOfYear($year_2, $month_2, $day_2);
         $days -= $this->dayOfYear($year_1, $month_1, $day_1);
 
