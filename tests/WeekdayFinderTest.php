@@ -44,5 +44,19 @@ class WeekdayFinderTest extends PHPUnit_Framework_TestCase
         //Assert
         $this->assertSame(false, $result);
     }
+
+    // Years divisible by 400
+    function test_checkLeapYear_divisibleBy400()
+    {
+        //Arrange
+        $test_WeekdayFinder = new WeekdayFinder;
+        $year = 2000;
+
+        //Act
+        $result = $test_WeekdayFinder->checkLeapYear($year);
+
+        //Assert
+        $this->assertSame(true, $result);
+    }
 }
 ?>
