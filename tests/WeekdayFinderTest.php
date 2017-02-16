@@ -92,7 +92,7 @@ class WeekdayFinderTest extends PHPUnit_Framework_TestCase
     }
 
     // Same date
-    function test_daysBetween_()
+    function test_daysBetween_sameDate()
     {
         //Arrange
         $test_WeekdayFinder = new WeekdayFinder;
@@ -108,6 +108,25 @@ class WeekdayFinderTest extends PHPUnit_Framework_TestCase
 
         //Assert
         $this->assertSame(0, $result);
+    }
+
+    // Dates in same year
+    function test_daysBetween_sameYear()
+    {
+        //Arrange
+        $test_WeekdayFinder = new WeekdayFinder;
+        $year_1 = 2017;
+        $month_1 = 1;
+        $day_1 = 5;
+        $year_2 = 2017;
+        $month_2 = 12;
+        $day_2 = 25;
+
+        //Act
+        $result = $test_WeekdayFinder->daysBetween($year_1, $month_1, $day_1, $year_2, $month_2, $day_2);
+
+        //Assert
+        $this->assertEquals(354, $result);
     }
 }
 ?>
