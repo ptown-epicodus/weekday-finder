@@ -16,6 +16,12 @@ class WeekdayFinder
         31, // December
     ];
 
+    function daysBetween($year_1, $month_1, $day_1, $year_2, $month_2, $day_2)
+    {
+      if ($year_1 == $year_2 && $month_1 == $month_2 && $day_1 == $day_2)
+          return 0;
+    }
+
     function dayOfYear($year, $month, $day)
     {
         $days = 0;

@@ -90,5 +90,24 @@ class WeekdayFinderTest extends PHPUnit_Framework_TestCase
         //Assert
         $this->assertEquals(366, $result);
     }
+
+    // Same date
+    function test_daysBetween_()
+    {
+        //Arrange
+        $test_WeekdayFinder = new WeekdayFinder;
+        $year_1 = 2017;
+        $month_1 = 12;
+        $day_1 = 31;
+        $year_2 = 2017;
+        $month_2 = 12;
+        $day_2 = 31;
+
+        //Act
+        $result = $test_WeekdayFinder->daysBetween($year_1, $month_1, $day_1, $year_2, $month_2, $day_2);
+
+        //Assert
+        $this->assertSame(0, $result);
+    }
 }
 ?>
