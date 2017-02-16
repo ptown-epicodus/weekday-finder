@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Weekday finder</title>
+  </head>
+  <body>
+    <h1>Weekday Finder</h1>
+    {% block content %}
+      <form action='/compute' method='post'>
+        <label for='date'>Date:</label>
+        <input type='date' name='date'>
+
+        <button type='submit'>Compute</button>
+      </form>
+    {% endblock %}
+  </body>
+</html>
