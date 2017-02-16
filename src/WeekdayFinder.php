@@ -3,7 +3,7 @@ class WeekdayFinder
 {
     function checkLeapYear($year)
     {
-        return false;
+        return ($year % 4 == 0);
     }
 }
 ?>
