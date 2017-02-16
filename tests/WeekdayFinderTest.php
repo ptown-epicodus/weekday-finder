@@ -74,5 +74,21 @@ class WeekdayFinderTest extends PHPUnit_Framework_TestCase
         //Assert
         $this->assertEquals(365, $result);
     }
+
+    // Day in leap year (after 2/28)
+    function test_dayOfYear_leapYear()
+    {
+        //Arrange
+        $test_WeekdayFinder = new WeekdayFinder;
+        $year = 2000;
+        $month = 12;
+        $day = 31;
+
+        //Act
+        $result = $test_WeekdayFinder->dayOfYear($year, $month, $day);
+
+        //Assert
+        $this->assertEquals(366, $result);
+    }
 }
 ?>

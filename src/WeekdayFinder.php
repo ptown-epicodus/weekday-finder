@@ -20,9 +20,10 @@ class WeekdayFinder
     {
         $days = 0;
 
-        for ($i = 1; $i < $month; $i++) {
-          $days += self::NUM_DAYS_IN_MONTHS[$i - 1];
-        }
+        for ($i = 1; $i < $month; $i++)
+            $days += self::NUM_DAYS_IN_MONTHS[$i - 1];
+        if ($month > 2 && $this->checkLeapYear($year))
+            $days++;
         $days += $day;
 
         return $days;
