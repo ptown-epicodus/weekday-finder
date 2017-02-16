@@ -28,7 +28,10 @@ class WeekdayFinder
 
     function weekday($year, $month, $day)
     {
-        $weekday_index = $this->daysBetween(2017, 1, 1, $year, $month, $day) % 7;
+        if ($year < 2017)
+            $weekday_index = (7 - ($this->daysBetween($year, $month, $day, 2017, 1, 1) % 7)) % 7;
+        else
+            $weekday_index = $this->daysBetween(2017, 1, 1, $year, $month, $day) % 7;
         return self::DAYS_OF_WEEK[$weekday_index];
     }
 
