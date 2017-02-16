@@ -18,7 +18,14 @@ class WeekdayFinder
 
     function daysBetween($year_1, $month_1, $day_1, $year_2, $month_2, $day_2)
     {
-        return $this->dayOfYear($year_2, $month_2, $day_2) - $this->dayOfYear($year_1, $month_1, $day_1);
+        $days = 0;
+
+        $whole_years_between = $year_2 - $year_1;
+        $days += 365 * $whole_years_between;
+        $days += $this->dayOfYear($year_2, $month_2, $day_2);
+        $days -= $this->dayOfYear($year_1, $month_1, $day_1);
+
+        return $days;
     }
 
     function dayOfYear($year, $month, $day)
