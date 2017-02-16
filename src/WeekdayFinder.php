@@ -16,6 +16,22 @@ class WeekdayFinder
         31, // December
     ];
 
+    const DAYS_OF_WEEK = [
+        'Sunday',
+        'Monday',
+        'Tuesday',
+        'Wednesday',
+        'Thursday',
+        'Friday',
+        'Saturday'
+    ];
+
+    function weekday($year, $month, $day)
+    {
+        $weekday_index = $this->daysBetween(2017, 1, 1, $year, $month, $day) % 7;
+        return self::DAYS_OF_WEEK[$weekday_index];
+    }
+
     function daysBetween($year_1, $month_1, $day_1, $year_2, $month_2, $day_2)
     {
         $days = 0;

@@ -166,5 +166,21 @@ class WeekdayFinderTest extends PHPUnit_Framework_TestCase
         //Assert
         $this->assertEquals(1804, $result);
     }
+
+    // Date after January 1, 2017
+    function test_weekday_2017()
+    {
+        //Arrange
+        $test_WeekdayFinder = new WeekdayFinder;
+        $year = 2018;
+        $month = 3;
+        $day = 17;
+
+        //Act
+        $result = $test_WeekdayFinder->weekday($year, $month, $day);
+
+        //Assert
+        $this->assertEquals('Saturday', $result);
+    }
 }
 ?>
