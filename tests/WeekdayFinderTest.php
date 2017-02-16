@@ -30,5 +30,19 @@ class WeekdayFinderTest extends PHPUnit_Framework_TestCase
         //Assert
         $this->assertSame(true, $result);
     }
+
+    // Years divisible by 100
+    function test_checkLeapYear_divisibleBy100()
+    {
+        //Arrange
+        $test_WeekdayFinder = new WeekdayFinder;
+        $year = 2100;
+
+        //Act
+        $result = $test_WeekdayFinder->checkLeapYear($year);
+
+        //Assert
+        $this->assertSame(false, $result);
+    }
 }
 ?>
